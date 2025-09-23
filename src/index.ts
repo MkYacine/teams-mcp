@@ -12,6 +12,7 @@ import { registerChatTools } from "./tools/chats.js";
 import { registerSearchTools } from "./tools/search.js";
 import { registerTeamsTools } from "./tools/teams.js";
 import { registerUsersTools } from "./tools/users.js";
+import { registerCallTools } from "./tools/call.js";
 
 const CLIENT_ID = "14d82eec-204b-4c2f-b7e8-296a70dab67e";
 const TOKEN_PATH = join(homedir(), ".msgraph-mcp-auth.json");
@@ -134,6 +135,7 @@ async function startMcpServer() {
   registerTeamsTools(server, graphService);
   registerChatTools(server, graphService);
   registerSearchTools(server, graphService);
+  registerCallTools(server, graphService);
 
   // Start server
   const transport = new StdioServerTransport();

@@ -17,9 +17,9 @@
   },
   "scripts": {
     "build": "npm run clean && npm run compile",
-    "clean": "rm -rf dist",
+    "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
     "compile": "tsc",
-    "dev": "node --watch src/index.ts",
+    "dev": "tsc && node --watch dist/index.js",
     "auth": "node dist/index.js authenticate",
     "auth:check": "node dist/index.js check",
     "auth:logout": "node dist/index.js logout",
@@ -61,6 +61,7 @@
     "dompurify": "^3.2.6",
     "jsdom": "^26.1.0",
     "marked": "^16.0.0",
+    "robotjs": "^0.6.0",
     "zod": "^3.25.67"
   },
   "devDependencies": {
