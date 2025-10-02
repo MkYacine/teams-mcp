@@ -370,7 +370,7 @@ export function registerChatTools(server: McpServer, graphService: GraphService)
             user: {
               id: user?.id,
             },
-            roles: ["member"],
+            roles: ["owner"],
           } as ConversationMember);
         }
 

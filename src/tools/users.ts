@@ -48,9 +48,9 @@ export function registerUsersTools(server: McpServer, graphService: GraphService
   // Search users
   server.tool(
     "search_users",
-    "Search for users in the organization by name or email address. Returns matching users with their basic profile information.",
+    "Search for users in the organization by name or email address. Returns matching users with their basic profile information. IMPORTANT: Must be called with keyword argument, e.g., search_users(query='John Doe') NOT search_users('John Doe')",
     {
-      query: z.string().describe("Search query (name or email)"),
+      query: z.string().describe("Search query (name or email) - REQUIRED keyword argument"),
     },
     async ({ query }) => {
       try {
